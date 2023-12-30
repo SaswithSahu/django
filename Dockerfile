@@ -1,9 +1,8 @@
-FROM ubuntu
+FROM ubuntu:20.04
 
 WORKDIR /app
 
-RUN apt-get install python3 python3-pip && \
-    pip install Django
+RUN apt-get update && apt-get install -y python3 && apt-get install -y python3-pip && pip install Django
 
 COPY . .
 
